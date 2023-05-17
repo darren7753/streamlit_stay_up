@@ -2,7 +2,7 @@ name: Visiting My Streamlit Apps
 
 on:
   schedule:
-    - cron: 12 17 * * *
+    - cron: 30 17 * * *
 
 jobs:
   build:
@@ -26,8 +26,8 @@ jobs:
 
       - name: commit and push README
         run: |
-          git config --local user.email "${{ secrets.EMAIL_GITHUB }}"
-          git config --local user.name "${{ secrets.USERNAME_GITHUB }}"
+          git config --global user.name "${{ secrets.USERNAME_GITHUB }}"
+          git config --global user.email "${{ secrets.EMAIL_GITHUB }}"
           git add README.md
           git commit -m "updated README"
           git push
