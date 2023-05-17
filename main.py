@@ -30,7 +30,7 @@ markdown_df = markdown_df.drop("Link", axis=1)
 # Updating the README file
 intro_text = '''# Streamlit Stay Up
 
-This is a simple Python script automated by GitHub Actions to visit my Streamlit apps once every 5 days to prevent them from going to sleep.
+This is a simple Python script automated by GitHub Actions to visit my Streamlit apps once every Monday and Friday to prevent them from going to sleep.
 
 '''
 with open("README.md", "w", encoding="utf-8") as f:
