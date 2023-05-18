@@ -2,7 +2,7 @@ name: Visiting My Streamlit Apps
 
 on:
   schedule:
-    - cron: 40 17 * * 0,4
+    - cron: 15 17 * * 0,4
 
 jobs:
   build:
