@@ -36,7 +36,7 @@ timestamps = []
 for i, j in zip(df["Name"], df["Link"]):
     current_timestamp = datetime.now()
     driver.get(j)
-    time.sleep(10)
+    time.sleep(30)
     timestamps.append(current_timestamp)
 
 driver.quit()
@@ -51,7 +51,7 @@ markdown_df = markdown_df.drop("Link", axis=1)
 # Updating the README file
 intro_text = '''# Streamlit Stay Up
 
-This is a simple Python script automated by GitHub Actions to visit my Streamlit apps every Monday and Friday to prevent them from going idle due to inactivity.
+This is a simple Python script automated by GitHub Actions to visit my Streamlit apps every day to prevent them from going idle due to inactivity.
 
 '''
 with open("README.md", "w", encoding="utf-8") as f:
