@@ -13,22 +13,15 @@ df = pd.read_excel("streamlit_apps.xlsx")
 df = df.sort_values("Name").reset_index(drop=True)
 
 # Setting up the browser
-chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+path = "chromedriver.exe"
 
-chrome_options = Options()
-options = [
-    "--headless",
-    "--disable-gpu",
-    "--window-size=1920,1200",
-    "--ignore-certificate-errors",
-    "--disable-extensions",
-    "--no-sandbox",
-    "--disable-dev-shm-usage"
-]
-for option in options:
-    chrome_options.add_argument(option)
+service = Service(path)
 
-driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+options = Options()
+options.add_argument("--headless")
+options.add_argument("window-size=1920x1080")
+
+driver = webdriver.Chrome(service=service, options=options)
 
 # Visiting each of my Streamlit app and noting the timestamp when visiting
 timestamps = []
